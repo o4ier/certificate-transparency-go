@@ -25,7 +25,7 @@ go get github.com/lib/pq
 To compile the log scanner run:
 
 ```bash
-go build github.com/tumi8/certificate-transparency-go/scanner/main/scanner.go
+go build github.com/tumi8/certificate-transparency-go/scanner/scanlog/scanlog.go
 ```
 
 # PostgreSQL
