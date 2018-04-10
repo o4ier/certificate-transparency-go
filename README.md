@@ -9,17 +9,23 @@ This go code must be imported into your go workspace before you can
 use it, which can be done with:
 
 ```bash
-go get github.com/google/certificate-transparency-go/client
-go get github.com/google/certificate-transparency-go/scanner
+go get github.com/tumi8/certificate-transparency-go/client
+go get github.com/tumi8/certificate-transparency-go/scanner
 # etc.
 ```
 
 # Building the binaries
 
+You need extra libraries:
+
+```bash
+go get github.com/lib/pq
+```
+
 To compile the log scanner run:
 
 ```bash
-go build github.com/google/certificate-transparency-go/scanner/main/scanner.go
+go build github.com/tumi8/certificate-transparency-go/scanner/main/scanner.go
 ```
 
 # PostgreSQL
