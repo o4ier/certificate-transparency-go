@@ -8,10 +8,15 @@ do
 done < logs.latest.csv
 
 #echo $arr
+while true
+do
+
 for i in "${arr[@]}"
 do
     echo "Found a log with URL ""$i";
-    ./scanlog -log_uri "$i" --num_workers 100;
+    scanlog/scanlog -log_uri "$i" -precerts_only --num_workers 10;
     wait;
     sleep 2;
+done
+
 done

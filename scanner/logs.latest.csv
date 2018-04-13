@@ -7,8 +7,15 @@ pXesnO11SN2PAltnokEInfhuD0duwgPC7L7bGF8oJjg=,https://ctserver.cnnic.cn
 23b9raxl59CVCIhuIVm9i5A1L1/q0+PcXiLrNQrMe5g=,https://dodo.ct.comodo.com
 b1N2rDHwMRnYmQCkURX/dxUcEdkCwQApBo2yCJo32RM=,https://mammoth.ct.comodo.com
 VYHUwhaQNgFK6gubVzxT8MDkOHhwJQgXL6OqHQcT0ww=,https://sabre.ct.comodo.com
+,https://ctlog.keysupport.org
 VhQGmi/XwuzT9eG9RLI+x0Z2ubyZEVzA75SYVdaJ0N0=,https://ct1.digicert-ct.com/log
 h3W/51l8+IxDmV+9827/Vo1HVjb/SrVgwbTq/16ggw8=,https://ct2.digicert-ct.com/log
+,https://golem.ct.digicert.com/log
+b/FBtWR+QiL37wUs7658If1gjifSr1pun0uKN9ZjPuU=,https://nessie2018.ct.digicert.com/log
+/kRhCLHQGreKYsz+q2qysrq/86va2ApNizDfLQAIgww=,https://nessie2019.ct.digicert.com/log
+xlKg7EjOs/yrFwmSxDqHQTMJ6ABlomJSQBujNioXxWU=,https://nessie2020.ct.digicert.com/log
+7sCV7o1yZA+S48O5G8cSo2lqCXtLahoUOOZHssvtxfk=,https://nessie2021.ct.digicert.com/log
+UaOw9f0BeZxWbbg3eI8MpHrMGyfL956IQpoN/tSLBeU=,https://nessie2022.ct.digicert.com/log
 wRZK4Kdy0tQ5LcgKwQdw1PDEm96ZGkhAwfoHUWT2M2A=,https://yeti2018.ct.digicert.com/log
 4mlLribo6UAJ6IYbtjuD1D7n/nSI+6SPKJMBnd3x2/4=,https://yeti2019.ct.digicert.com/log
 8JWkWfIA0YJAEC0vk4iOrUv+HUfjmeHQNKawqKqOsnM=,https://yeti2020.ct.digicert.com/log
@@ -31,6 +38,12 @@ pLkJkLQYWBSHuxOizGdwCjw1mAT5G9+443fNDsgN3BA=,https://ct.googleapis.com/pilot
 7ku9t3XOYLrhQmkfq+GeZqMPfl+wctiDAMR7iXqo/cs=,https://ct.googleapis.com/rocketeer
 u9nfvB+KcbWTlCOXqpJ7RzhXlQqrUugakJZkNo4e0YU=,https://ct.googleapis.com/skydiver
 qJnYeAySkKr0YvMYgMz71SRR6XDQ+/WR73Ww2ZtkVoE=,https://ct.googleapis.com/submariner
+,https://ct.googleapis.com/logs/xenon2018
+,https://ct.googleapis.com/logs/xenon2019
+,https://ct.googleapis.com/logs/xenon2020
+,https://ct.googleapis.com/logs/xenon2021
+,https://ct.googleapis.com/logs/xenon2022
+,https://oak.ct.letsencrypt.org/oak
 qucLfzy41WbIbC8Wl5yfRF9pqw60U1WJsvd6AwEE880=,https://plausible.ct.nordu.net
 MtxZwtTEGWjVbhS8YayPDkXbOfrzwVWqQlL1AB+gxiM=,https://ct.sheca.com
 NLtq1sPfnAPuqKSZ/3iRSGydXlysktAfe/0bzhnbSO8=,https://ct.startssl.com
@@ -43,3 +56,4 @@ QbLcLonmPOSvG6e7Kb9oxt7m+fHMBH4w3/rjs7olkmM=,https://ctlog.wosign.com
 bQEsfZvOgPjWivKco5/77P+UE+JMZ1TZcPipZ2bnJhk=,https://ctlog3.wosign.com
 oXEni6iuir1G4jqDj74jdM4lWBrNpUBslrhxAEfpvsI=,https://ctlog.wotrus.com
 mueOgrUnqTLVe4NZadQv4/Ah4TKZis8cN3oV+x5FLFo=,https://ctlog3.wotrus.com
+

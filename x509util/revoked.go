@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/google/certificate-transparency-go/x509"
-	"github.com/google/certificate-transparency-go/x509/pkix"
+	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/tumi8/certificate-transparency-go/x509/pkix"
 )
 
 func revocationReasonToString(reason x509.RevocationReasonCode) string {

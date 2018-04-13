@@ -19,11 +19,11 @@ import (
 	"crypto/sha256"
 	"testing"
 
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/tls"
-	"github.com/google/certificate-transparency-go/trillian/ctfe/testonly"
-	"github.com/google/certificate-transparency-go/x509"
-	"github.com/google/certificate-transparency-go/x509util"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/tls"
+	"github.com/tumi8/certificate-transparency-go/trillian/ctfe/testonly"
+	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/tumi8/certificate-transparency-go/x509util"
 	"github.com/kylelemons/godebug/pretty"
 )
 

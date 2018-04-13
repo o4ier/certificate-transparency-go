@@ -25,9 +25,9 @@ import (
 	"net/http"
 	"strconv"
 
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/jsonclient"
-	"github.com/google/certificate-transparency-go/tls"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/jsonclient"
+	"github.com/tumi8/certificate-transparency-go/tls"
 )
 
 // LogClient represents a client for a given CT Log instance

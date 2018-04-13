@@ -35,10 +35,10 @@ import (
 	"encoding/hex"
 	_ "encoding/hex"
 	_ "encoding/pem"
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/client"
-	"github.com/google/certificate-transparency-go/jsonclient"
-	"github.com/google/certificate-transparency-go/scanner"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/client"
+	"github.com/tumi8/certificate-transparency-go/jsonclient"
+	"github.com/tumi8/certificate-transparency-go/scanner"
 	"github.com/lib/pq"
 	"golang.org/x/net/context"
 	"io"
@@ -226,9 +226,9 @@ func parse_and_exec_precert(c chan (*ct.LogEntry), wg *sync.WaitGroup, channel_c
 		}
 		san_dns := pq.Array(dns_names_tmp)
 		index := e.Index
-		cert_hash_tmp := sha256.Sum256(e.Precert.TBSCertificate.Raw)
+		cert_hash_tmp := sha256.Sum256(e.Precert.Submitted.Data)
 		cert_hash := hex.EncodeToString(cert_hash_tmp[:])
-		cert := &e.Precert.TBSCertificate.Raw
+		cert := &e.Precert.Submitted.Data
 		pub_key := &e.Precert.TBSCertificate.RawSubjectPublicKeyInfo
 		var a7_tmp []string
 		for _, chain_entry := range e.Chain {
@@ -638,8 +638,14 @@ func main() {
 	var latestSth int64
 	if *printChains {
 		latestSth, err = scanner.Scan(ctx, logFullChain, logFullChain)
+		if err != nil {
+			log.Fatalf("Failed to start scan: %v\n", err)
+		}
 	} else {
 		latestSth, err = scanner.Scan(ctx, logCertInfo, logPrecertInfo)
+		if err != nil {
+                        log.Fatalf("Failed to start scan: %v\n", err)
+                }
 	}
 	// DONE close everything! Care: Look for deadlocks of channels.
 

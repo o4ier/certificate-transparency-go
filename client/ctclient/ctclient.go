@@ -28,13 +28,13 @@ import (
 	"os"
 	"time"
 
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/client"
-	"github.com/google/certificate-transparency-go/jsonclient"
-	"github.com/google/certificate-transparency-go/merkletree"
-	"github.com/google/certificate-transparency-go/tls"
-	"github.com/google/certificate-transparency-go/x509"
-	"github.com/google/certificate-transparency-go/x509util"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/client"
+	"github.com/tumi8/certificate-transparency-go/jsonclient"
+	"github.com/tumi8/certificate-transparency-go/merkletree"
+	"github.com/tumi8/certificate-transparency-go/tls"
+	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/tumi8/certificate-transparency-go/x509util"
 )
 
 var (

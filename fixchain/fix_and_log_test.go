@@ -21,9 +21,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/google/certificate-transparency-go/client"
-	"github.com/google/certificate-transparency-go/jsonclient"
-	"github.com/google/certificate-transparency-go/x509"
+	"github.com/tumi8/certificate-transparency-go/client"
+	"github.com/tumi8/certificate-transparency-go/jsonclient"
+	"github.com/tumi8/certificate-transparency-go/x509"
 )
 
 var newFixAndLogTests = []fixAndLogTest{

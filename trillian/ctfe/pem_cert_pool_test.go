@@ -17,7 +17,7 @@ package ctfe
 import (
 	"testing"
 
-	"github.com/google/certificate-transparency-go/trillian/ctfe/testonly"
+	"github.com/tumi8/certificate-transparency-go/trillian/ctfe/testonly"
 )
 
 func TestLoadSingleCertFromPEMs(t *testing.T) {

@@ -25,10 +25,10 @@ import (
 
 	"github.com/golang/protobuf/ptypes"
 	tspb "github.com/golang/protobuf/ptypes/timestamp"
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/client/configpb"
-	"github.com/google/certificate-transparency-go/testdata"
-	"github.com/google/certificate-transparency-go/x509util"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/client/configpb"
+	"github.com/tumi8/certificate-transparency-go/testdata"
+	"github.com/tumi8/certificate-transparency-go/x509util"
 )
 
 func TestNewTemporalLogClient(t *testing.T) {

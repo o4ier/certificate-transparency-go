@@ -20,6 +20,6 @@ IMPORTANT: Only code rooted within this part of the tree should refer to the CT
 Github repository. Other parts of the system must not assume that the data they're
 processing is X.509 or CT related.
 
-The CT repository can be found at: https://github.com/google/certificate-transparency
+The CT repository can be found at: https://github.com/tumi8/certificate-transparency
 */
 package ctfe

@@ -23,11 +23,12 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+	"errors"
 
 	"database/sql"
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/client"
-	"github.com/google/certificate-transparency-go/x509"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/client"
+	"github.com/tumi8/certificate-transparency-go/x509"
 )
 
 // ScannerOptions holds configuration options for the Scanner
@@ -271,7 +272,7 @@ func (s *Scanner) Scan(ctx context.Context, foundCert func(*ct.LogEntry), foundP
 	s.entriesWithNonFatalErrors = 0
 
 	latestSthTmp, err := s.logClient.GetSTH(ctx)
-	latestSth := minimum(100000, int(latestSthTmp.TreeSize))
+	latestSth := minimum(1000000, int(latestSthTmp.TreeSize))
 	s.Log(fmt.Sprintf("Real Tree Size: %d, Will use Tree Size: %d", latestSthTmp.TreeSize, latestSth))
 	if err != nil {
 		return int64(latestSth), err
@@ -280,7 +281,7 @@ func (s *Scanner) Scan(ctx context.Context, foundCert func(*ct.LogEntry), foundP
 
 	ticker := time.NewTicker(time.Second)
 	startTime := time.Now()
-	fetches := make(chan fetchRange, 1000)
+	fetches := make(chan fetchRange, 10000)
 	jobs := make(chan entryInfo, 100000)
 	go func() {
 		for range ticker.C {
@@ -296,7 +297,9 @@ func (s *Scanner) Scan(ctx context.Context, foundCert func(*ct.LogEntry), foundP
 
 	var ranges list.List
 	// TODO in next line: replace 0 with s.opts.StartIndex
-	for start := int64(s.opts.StartIndex); start < int64(latestSth); {
+	fmt.Printf("Start index: %v, end index: %v\n", s.opts.StartIndex, min(int64(s.opts.StartIndex)+int64(s.opts.BatchSize), int64(latestSthTmp.TreeSize)) - 1)
+
+	for start := int64(s.opts.StartIndex); start < int64(s.opts.StartIndex) + int64(latestSth); {
 		// TODO end := min(start+int64(s.opts.BatchSize), int64(latestSth.TreeSize)) - 1
 		end := min(start+int64(s.opts.BatchSize), int64(latestSth)) - 1
 		ranges.PushBack(fetchRange{start, end})
@@ -333,7 +336,7 @@ func (s *Scanner) Scan(ctx context.Context, foundCert func(*ct.LogEntry), foundP
 	s.Log(fmt.Sprintf("Completed %d certs in %s", atomic.LoadInt64(&s.certsProcessed), humanTime(int(time.Since(startTime).Seconds()))))
 	s.Log(fmt.Sprintf("Saw %d precerts", atomic.LoadInt64(&s.precertsSeen)))
 	s.Log(fmt.Sprintf("%d unparsable entries, %d non-fatal errors", atomic.LoadInt64(&s.unparsableEntries), atomic.LoadInt64(&s.entriesWithNonFatalErrors)))
-	return int64(latestSth), nil
+	return int64(s.opts.StartIndex) + int64(latestSth), nil
 }
 
 // NewScanner creates a new Scanner instance using client to talk to the log,

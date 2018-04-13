@@ -25,10 +25,10 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/client/configpb"
-	"github.com/google/certificate-transparency-go/jsonclient"
-	"github.com/google/certificate-transparency-go/x509"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/client/configpb"
+	"github.com/tumi8/certificate-transparency-go/jsonclient"
+	"github.com/tumi8/certificate-transparency-go/x509"
 )
 
 type interval struct {

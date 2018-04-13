@@ -26,11 +26,11 @@ import (
 	"os"
 	"sync"
 
-	"github.com/google/certificate-transparency-go/client"
-	"github.com/google/certificate-transparency-go/fixchain"
-	"github.com/google/certificate-transparency-go/fixchain/ratelimiter"
-	"github.com/google/certificate-transparency-go/jsonclient"
-	"github.com/google/certificate-transparency-go/x509"
+	"github.com/tumi8/certificate-transparency-go/client"
+	"github.com/tumi8/certificate-transparency-go/fixchain"
+	"github.com/tumi8/certificate-transparency-go/fixchain/ratelimiter"
+	"github.com/tumi8/certificate-transparency-go/jsonclient"
+	"github.com/tumi8/certificate-transparency-go/x509"
 )
 
 // Assumes chains to be stores in a file in JSON encoded with the certificates

@@ -18,8 +18,8 @@ import (
 	"math/big"
 	"regexp"
 
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/x509"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/x509"
 )
 
 // Matcher describes how to match certificates and precertificates; clients should implement this interface

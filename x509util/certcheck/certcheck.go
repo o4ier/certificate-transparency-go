@@ -22,8 +22,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/google/certificate-transparency-go/x509"
-	"github.com/google/certificate-transparency-go/x509util"
+	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/tumi8/certificate-transparency-go/x509util"
 )
 
 var root = flag.String("root", "", "Root CA certificate file")

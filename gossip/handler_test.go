@@ -26,7 +26,7 @@ import (
 	"testing"
 	"time"
 
-	ct "github.com/google/certificate-transparency-go"
+	ct "github.com/tumi8/certificate-transparency-go"
 	"github.com/stretchr/testify/assert"
 )
 

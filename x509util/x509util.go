@@ -29,11 +29,11 @@ import (
 	"fmt"
 	"strconv"
 
-	ct "github.com/google/certificate-transparency-go"
-	"github.com/google/certificate-transparency-go/asn1"
-	"github.com/google/certificate-transparency-go/tls"
-	"github.com/google/certificate-transparency-go/x509"
-	"github.com/google/certificate-transparency-go/x509/pkix"
+	ct "github.com/tumi8/certificate-transparency-go"
+	"github.com/tumi8/certificate-transparency-go/asn1"
+	"github.com/tumi8/certificate-transparency-go/tls"
+	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/tumi8/certificate-transparency-go/x509/pkix"
 )
 
 // OIDForStandardExtension indicates whether oid identifies a standard extension.

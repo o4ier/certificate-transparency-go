@@ -28,7 +28,7 @@ ct_prep_test() {
   log_prep_test "${rpc_server_count}" "${log_signer_count}"
 
   echo "Building CT personality code"
-  go build ${GOFLAGS} github.com/google/certificate-transparency-go/trillian/ctfe/ct_server
+  go build ${GOFLAGS} github.com/tumi8/certificate-transparency-go/trillian/ctfe/ct_server
 
   echo "Provisioning logs for CT"
   ct_provision "${RPC_SERVER_1}"
@@ -63,9 +63,9 @@ ct_prep_test() {
         ./etcdiscover ${ETCD_OPTS} --etcd_services=trillian-ctfe-metrics-http,trillian-logserver-http,trillian-logsigner-http -target=./trillian.json --logtostderr &
         ETCDISCOVER_PID=$!
         echo "Launching Prometheus (default location localhost:9090)"
-        ${PROMETHEUS_DIR}/prometheus --config.file=${GOPATH}/src/github.com/google/certificate-transparency-go/trillian/integration/prometheus.yml \
-                           --web.console.templates=${GOPATH}/src/github.com/google/certificate-transparency-go/trillian/integration/consoles \
-                           --web.console.libraries=${GOPATH}/src/github.com/google/certificate-transparency-go/third_party/prometheus/console_libs &
+        ${PROMETHEUS_DIR}/prometheus --config.file=${GOPATH}/src/github.com/tumi8/certificate-transparency-go/trillian/integration/prometheus.yml \
+                           --web.console.templates=${GOPATH}/src/github.com/tumi8/certificate-transparency-go/trillian/integration/consoles \
+                           --web.console.libraries=${GOPATH}/src/github.com/tumi8/certificate-transparency-go/third_party/prometheus/console_libs &
         PROMETHEUS_PID=$!
     fi
   fi
@@ -82,7 +82,7 @@ ct_provision() {
   # Build config file with absolute paths
   CT_CFG=$(mktemp ${TMPDIR}/ct-XXXXXX)
 
-  sed "s!@TESTDATA@!${GOPATH}/src/github.com/google/certificate-transparency-go/trillian/testdata!" ${GOPATH}/src/github.com/google/certificate-transparency-go/trillian/integration/ct_integration_test.cfg > "${CT_CFG}"
+  sed "s!@TESTDATA@!${GOPATH}/src/github.com/tumi8/certificate-transparency-go/trillian/testdata!" ${GOPATH}/src/github.com/tumi8/certificate-transparency-go/trillian/integration/ct_integration_test.cfg > "${CT_CFG}"
 
   echo 'Building createtree'
   go build ${GOFLAGS} github.com/google/trillian/cmd/createtree/
@@ -93,7 +93,7 @@ ct_provision() {
     tree_id=$(./createtree \
       --admin_server="${admin_server}" \
       --private_key_format=PrivateKey \
-      --pem_key_path=${GOPATH}/src/github.com/google/certificate-transparency-go/trillian/testdata/log-rpc-server.privkey.pem \
+      --pem_key_path=${GOPATH}/src/github.com/tumi8/certificate-transparency-go/trillian/testdata/log-rpc-server.privkey.pem \
       --pem_key_password=towel \
       --signature_algorithm=ECDSA)
     echo "Created tree ${tree_id}"
