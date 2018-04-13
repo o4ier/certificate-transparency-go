@@ -36,6 +36,13 @@ The custom scanner requires a PostgreSQL instance running on port 7777. To creat
 scanner/initialize_db.sh
 ```
 
+To download certs from all logs in `scanner/logs.latest.csv` in batches run:
+
+```bash
+chmod +x scanner/starter.sh
+scanner/starter.sh
+
+
 # Contributing
 
 When sending pull requests, please ensure that everything's been run
