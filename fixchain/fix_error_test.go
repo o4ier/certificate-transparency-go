@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/x509"
 )
 
 func TestEqual(t *testing.T) {

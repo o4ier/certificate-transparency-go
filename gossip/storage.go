@@ -22,7 +22,7 @@ import (
 	"strings"
 	"time"
 
-	ct "github.com/tumi8/certificate-transparency-go"
+	ct "github.com/google/certificate-transparency-go"
 	sqlite3 "github.com/mattn/go-sqlite3"
 )
 

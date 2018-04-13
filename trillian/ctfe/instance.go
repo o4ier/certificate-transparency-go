@@ -23,9 +23,9 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe/configpb"
-	"github.com/tumi8/certificate-transparency-go/trillian/util"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/trillian/ctfe/configpb"
+	"github.com/google/certificate-transparency-go/trillian/util"
+	"github.com/google/certificate-transparency-go/x509"
 	"github.com/google/trillian"
 	"github.com/google/trillian/crypto"
 	"github.com/google/trillian/crypto/keys"

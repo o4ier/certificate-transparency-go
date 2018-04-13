@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/tumi8/certificate-transparency-go/x509"
-	"github.com/tumi8/certificate-transparency-go/x509util"
+	"github.com/google/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/x509util"
 )
 
 var caFile = flag.String("ca", "", "CA certificate file")

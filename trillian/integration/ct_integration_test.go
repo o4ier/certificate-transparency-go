@@ -25,8 +25,8 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/ptypes"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe/configpb"
+	"github.com/google/certificate-transparency-go/trillian/ctfe"
+	"github.com/google/certificate-transparency-go/trillian/ctfe/configpb"
 	"github.com/google/trillian/crypto/keyspb"
 	"github.com/google/trillian/storage/testdb"
 

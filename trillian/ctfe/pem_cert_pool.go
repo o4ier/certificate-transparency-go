@@ -22,7 +22,7 @@ import (
 	"io/ioutil"
 
 	"github.com/golang/glog"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/x509"
 )
 
 // String for certificate blocks in BEGIN / END PEM headers

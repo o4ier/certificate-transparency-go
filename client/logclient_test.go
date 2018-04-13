@@ -31,11 +31,11 @@ import (
 	"testing"
 	"time"
 
-	ct "github.com/tumi8/certificate-transparency-go"
-	"github.com/tumi8/certificate-transparency-go/jsonclient"
-	"github.com/tumi8/certificate-transparency-go/testdata"
-	"github.com/tumi8/certificate-transparency-go/tls"
-	"github.com/tumi8/certificate-transparency-go/x509util"
+	ct "github.com/google/certificate-transparency-go"
+	"github.com/google/certificate-transparency-go/jsonclient"
+	"github.com/google/certificate-transparency-go/testdata"
+	"github.com/google/certificate-transparency-go/tls"
+	"github.com/google/certificate-transparency-go/x509util"
 )
 
 func dh(s string) []byte {

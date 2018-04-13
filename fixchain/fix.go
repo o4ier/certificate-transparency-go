@@ -19,7 +19,7 @@ import (
 	"encoding/pem"
 	"net/http"
 
-	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/x509"
 )
 
 // Fix attempts to fix the certificate chain for the certificate that is passed

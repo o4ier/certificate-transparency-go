@@ -26,9 +26,9 @@ import (
 	"errors"
 
 	"database/sql"
-	ct "github.com/tumi8/certificate-transparency-go"
-	"github.com/tumi8/certificate-transparency-go/client"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	ct "github.com/google/certificate-transparency-go"
+	"github.com/google/certificate-transparency-go/client"
+	"github.com/google/certificate-transparency-go/x509"
 )
 
 // ScannerOptions holds configuration options for the Scanner

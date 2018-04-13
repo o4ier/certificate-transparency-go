@@ -11,7 +11,7 @@ import (
 	"encoding/pem"
 	"fmt"
 
-	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/x509"
 )
 
 func ExampleCertificate_Verify() {

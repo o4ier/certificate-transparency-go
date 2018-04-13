@@ -23,8 +23,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	ct "github.com/tumi8/certificate-transparency-go"
-	"github.com/tumi8/certificate-transparency-go/tls"
+	ct "github.com/google/certificate-transparency-go"
+	"github.com/google/certificate-transparency-go/tls"
 )
 
 const (

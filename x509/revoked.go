@@ -10,8 +10,8 @@ import (
 	"encoding/pem"
 	"time"
 
-	"github.com/tumi8/certificate-transparency-go/asn1"
-	"github.com/tumi8/certificate-transparency-go/x509/pkix"
+	"github.com/google/certificate-transparency-go/asn1"
+	"github.com/google/certificate-transparency-go/x509/pkix"
 )
 
 var (

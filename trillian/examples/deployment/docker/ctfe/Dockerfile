@@ -7,8 +7,8 @@ ENV TRILLIAN_LOG_HOST=1.2.3.4 \
 ENV HOST=0.0.0.0 \
     HTTP_PORT=6962
 
-ADD . /go/src/github.com/tumi8/certificate-transparency-go
-WORKDIR /go/src/github.com/tumi8/certificate-transparency-go
+ADD . /go/src/github.com/google/certificate-transparency-go
+WORKDIR /go/src/github.com/google/certificate-transparency-go
 
 RUN go get -v ./trillian/ctfe/ct_server
 

@@ -29,7 +29,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tumi8/certificate-transparency-go/testdata"
+	"github.com/google/certificate-transparency-go/testdata"
 )
 
 func publicKeyPEMToDER(key string) []byte {

@@ -30,8 +30,8 @@ import (
 	"strings"
 	"time"
 
-	ct "github.com/tumi8/certificate-transparency-go"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	ct "github.com/google/certificate-transparency-go"
+	"github.com/google/certificate-transparency-go/x509"
 	"golang.org/x/net/context/ctxhttp"
 )
 

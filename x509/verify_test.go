@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tumi8/certificate-transparency-go/x509/pkix"
+	"github.com/google/certificate-transparency-go/x509/pkix"
 )
 
 var supportSHA2 = true

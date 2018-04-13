@@ -25,10 +25,10 @@ import (
 	"strings"
 	"testing"
 
-	ct "github.com/tumi8/certificate-transparency-go"
-	"github.com/tumi8/certificate-transparency-go/testdata"
-	"github.com/tumi8/certificate-transparency-go/tls"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	ct "github.com/google/certificate-transparency-go"
+	"github.com/google/certificate-transparency-go/testdata"
+	"github.com/google/certificate-transparency-go/tls"
+	"github.com/google/certificate-transparency-go/x509"
 )
 
 type testRoundTripper struct {

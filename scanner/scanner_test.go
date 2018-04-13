@@ -23,10 +23,10 @@ import (
 	"regexp"
 	"testing"
 
-	ct "github.com/tumi8/certificate-transparency-go"
-	"github.com/tumi8/certificate-transparency-go/client"
-	"github.com/tumi8/certificate-transparency-go/jsonclient"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	ct "github.com/google/certificate-transparency-go"
+	"github.com/google/certificate-transparency-go/client"
+	"github.com/google/certificate-transparency-go/jsonclient"
+	"github.com/google/certificate-transparency-go/x509"
 )
 
 func CertMatchesRegex(r *regexp.Regexp, cert *x509.Certificate) bool {

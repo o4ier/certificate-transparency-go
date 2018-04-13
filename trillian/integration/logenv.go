@@ -23,8 +23,8 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe/configpb"
+	"github.com/google/certificate-transparency-go/trillian/ctfe"
+	"github.com/google/certificate-transparency-go/trillian/ctfe/configpb"
 	"github.com/google/trillian"
 	"github.com/google/trillian/monitoring/prometheus"
 	"github.com/google/trillian/testonly/integration"

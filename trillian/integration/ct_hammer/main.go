@@ -30,15 +30,15 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	"github.com/tumi8/certificate-transparency-go/fixchain/ratelimiter"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe"
-	"github.com/tumi8/certificate-transparency-go/trillian/integration"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/fixchain/ratelimiter"
+	"github.com/google/certificate-transparency-go/trillian/ctfe"
+	"github.com/google/certificate-transparency-go/trillian/integration"
+	"github.com/google/certificate-transparency-go/x509"
 	"github.com/google/trillian/monitoring"
 	"github.com/google/trillian/monitoring/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	ct "github.com/tumi8/certificate-transparency-go"
+	ct "github.com/google/certificate-transparency-go"
 )
 
 var (

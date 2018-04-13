@@ -27,15 +27,15 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/tumi8/certificate-transparency-go/client"
-	"github.com/tumi8/certificate-transparency-go/merkletree"
-	"github.com/tumi8/certificate-transparency-go/tls"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe"
-	"github.com/tumi8/certificate-transparency-go/trillian/ctfe/configpb"
-	"github.com/tumi8/certificate-transparency-go/x509"
+	"github.com/google/certificate-transparency-go/client"
+	"github.com/google/certificate-transparency-go/merkletree"
+	"github.com/google/certificate-transparency-go/tls"
+	"github.com/google/certificate-transparency-go/trillian/ctfe"
+	"github.com/google/certificate-transparency-go/trillian/ctfe/configpb"
+	"github.com/google/certificate-transparency-go/x509"
 	"github.com/google/trillian/monitoring"
 
-	ct "github.com/tumi8/certificate-transparency-go"
+	ct "github.com/google/certificate-transparency-go"
 )
 
 const defaultEmitSeconds = 10

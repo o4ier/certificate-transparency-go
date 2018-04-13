@@ -29,7 +29,7 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/tumi8/certificate-transparency-go/asn1"
+	"github.com/google/certificate-transparency-go/asn1"
 )
 
 type dsaSig struct {
