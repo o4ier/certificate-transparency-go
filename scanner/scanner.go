@@ -23,7 +23,7 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
-	"errors"
+	_ "errors"
 
 	"database/sql"
 	ct "github.com/google/certificate-transparency-go"
@@ -257,6 +257,13 @@ func minimum(a, b int) int {
 	return b
 }
 
+func minimum64(a, b int64) int64 {
+        if a < b {
+                return a
+        }
+        return b
+}
+
 // Scan performs a scan against the Log.
 // For each x509 certificate found, foundCert will be called with the
 // index of the entry and certificate itself as arguments.  For each precert
@@ -271,13 +278,23 @@ func (s *Scanner) Scan(ctx context.Context, foundCert func(*ct.LogEntry), foundP
 	s.unparsableEntries = 0
 	s.entriesWithNonFatalErrors = 0
 
-	latestSthTmp, err := s.logClient.GetSTH(ctx)
-	latestSth := minimum(1000000, int(latestSthTmp.TreeSize))
-	s.Log(fmt.Sprintf("Real Tree Size: %d, Will use Tree Size: %d", latestSthTmp.TreeSize, latestSth))
+	// latestSthFomLog is nil!!!
+	latestSthFromLog, err := s.logClient.GetSTH(ctx)
+	if err != nil {
+		return 0, err
+	}
+	fmt.Println(latestSthFromLog)
+	latestSth := minimum64(s.opts.StartIndex + int64(100000), int64(latestSthFromLog.TreeSize - 1))
+	fmt.Println(latestSth)
+	//if int(latestSthTmp.TreeSize) < 150000 {
+	//	return 0, errors.New(">>> Small log, skipping for now because probably rate limited...")
+	//} else {
+	//	s.Log(fmt.Sprintf("Did not abort because %v > 150k\n", int(latestSthTmp.TreeSize)))
+	//}
+	s.Log(fmt.Sprintf("Real Tree Size: %d, Will use Tree Size: %d", latestSthFromLog.TreeSize, int64(latestSth)))
 	if err != nil {
 		return int64(latestSth), err
 	}
-	s.Log(fmt.Sprintf("Got STH with %d certs", latestSth))
 
 	ticker := time.NewTicker(time.Second)
 	startTime := time.Now()
@@ -296,12 +313,10 @@ func (s *Scanner) Scan(ctx context.Context, foundCert func(*ct.LogEntry), foundP
 	}()
 
 	var ranges list.List
-	// TODO in next line: replace 0 with s.opts.StartIndex
-	fmt.Printf("Start index: %v, end index: %v\n", s.opts.StartIndex, min(int64(s.opts.StartIndex)+int64(s.opts.BatchSize), int64(latestSthTmp.TreeSize)) - 1)
+	fmt.Printf("Start index: %v, end index: %v\n", s.opts.StartIndex, latestSth)
 
-	for start := int64(s.opts.StartIndex); start < int64(s.opts.StartIndex) + int64(latestSth); {
-		// TODO end := min(start+int64(s.opts.BatchSize), int64(latestSth.TreeSize)) - 1
-		end := min(start+int64(s.opts.BatchSize), int64(latestSth)) - 1
+	for start := int64(s.opts.StartIndex); start < int64(latestSth); {
+		end := int64(latestSth)
 		ranges.PushBack(fetchRange{start, end})
 		start = end + 1
 	}
@@ -336,7 +351,7 @@ func (s *Scanner) Scan(ctx context.Context, foundCert func(*ct.LogEntry), foundP
 	s.Log(fmt.Sprintf("Completed %d certs in %s", atomic.LoadInt64(&s.certsProcessed), humanTime(int(time.Since(startTime).Seconds()))))
 	s.Log(fmt.Sprintf("Saw %d precerts", atomic.LoadInt64(&s.precertsSeen)))
 	s.Log(fmt.Sprintf("%d unparsable entries, %d non-fatal errors", atomic.LoadInt64(&s.unparsableEntries), atomic.LoadInt64(&s.entriesWithNonFatalErrors)))
-	return int64(s.opts.StartIndex) + int64(latestSth), nil
+	return int64(latestSth), nil
 }
 
 // NewScanner creates a new Scanner instance using client to talk to the log,
